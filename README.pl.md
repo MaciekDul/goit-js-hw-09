@@ -15,7 +15,7 @@ skonfigurowania dodatkowych opcji [zobacz dokumentację](https://parceljs.org/)
 5. Otwórz projekt w VSCode, uruchom terminal i zwiąż projekt z repozytorium
    GitHub
    [zgodnie z instrukcją](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url).
-6. Utwórzz zależność projektu w terminalu przez polecenie `npm install` .
+6. Utwórz zależność projektu w terminalu przez polecenie `npm install` .
 7. Włącz tryb edycji, wykonując polecenie `npm start`.
 8. Przejdź w przeglądarce pod adres
    [http://localhost:1234](http://localhost:1234). Ta strona będzie się
@@ -96,7 +96,7 @@ właściwości `homepage` lub skryptu `build` w pliku `package.json`.
 
 ![How it works](./assets/how-it-works.png)
 
-1. Po każdym pushu w gałęzi `main` repozytorium GitHub, włącza się specjalny
+1. Po kżdym pushu w gałęzi `main` repozytorium GitHub, włącza się specjalny
    skrypt (GitHub Action) z pliku `.github/workflows/deploy.yml`.
 2. Wszystkie pliki repozytorium kopiują się na serwer, gdzie projekt
    inicjalizuje się i buduje przed deploymentem.
