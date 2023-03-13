@@ -1,13 +1,13 @@
 import Notiflix from 'notiflix';
 
-const refs = {
+const opt = {
   form: document.querySelector('.form'),
   inputDelay: document.querySelector('input[name=delay]'),
   inputDelayStep: document.querySelector('input[name=step]'),
   inputAmount: document.querySelector('input[name=amount]'),
 };
 
-refs.form.addEventListener('submit', submitForm);
+opt.form.addEventListener('submit', submitForm);
 
 function createPromise(position, delay) {
   const promiseMy = new Promise((resolve, reject) => {

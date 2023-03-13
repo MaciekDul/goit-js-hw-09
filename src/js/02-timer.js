@@ -3,20 +3,20 @@ import 'flatpickr/dist/flatpickr.min.css';
 
 import Notiflix from 'notiflix';
 
-const refs = {
-  dateTimeInput: document.querySelector('#datetime-picker'),
-  btnStart: document.querySelector('[data-start]'),
+const every = {
+  dateTime: document.querySelector('#datetime-picker'),
+  startButton: document.querySelector('[data-start]'),
   daysValue: document.querySelector('span[data-days]'),
-  hoursValue: document.querySelector('span[data-hours]'),
-  minutesValue: document.querySelector('span[data-minutes]'),
-  secondsValue: document.querySelector('span[data-seconds]'),
+  hoursTimer: document.querySelector('span[data-hours]'),
+  minutesTimer: document.querySelector('span[data-minutes]'),
+  secondsTimer: document.querySelector('span[data-seconds]'),
 };
 
 const CURRENT_DATE = new Date();
 let SELECTED_DATE = new Date();
 let delta;
 
-refs.btnStart.disabled = true;
+every.startButton.disabled = true;
 
 const options = {
   enableTime: true,
@@ -28,17 +28,17 @@ const options = {
       Notiflix.Notify.failure('Please choose a date in the future');
       // window.alert('Please choose a date in the future');
     } else {
-      refs.btnStart.disabled = false;
+      every.startButton.disabled = false;
       SELECTED_DATE = selectedDates[0];
-      console.log(refs.dateTimeInput.value);
+      console.log(refs.dateTime.value);
     }
   },
 };
 
-flatpickr(refs.dateTimeInput, options);
+flatpickr(every.dateTime, options);
 require('flatpickr/dist/themes/material_blue.css');
 
-refs.btnStart.addEventListener('click', startTimer);
+every.startButton.addEventListener('click', startTimer);
 
 function convertMs(ms) {
   const second = 1000;
@@ -60,8 +60,8 @@ function convertMs(ms) {
 }
 
 function startTimer() {
-  refs.btnStart.disabled = true;
-  refs.dateTimeInput.disabled = true;
+  refs.startButton.disabled = true;
+  refs.dateTime.disabled = true;
   getDeltaTime();
 }
 
@@ -80,9 +80,9 @@ function getDeltaTime() {
 
 function clockView(dateOffset) {
   refs.daysValue.textContent = dateOffset.days;
-  refs.hoursValue.textContent = dateOffset.hours;
-  refs.minutesValue.textContent = dateOffset.minutes;
-  refs.secondsValue.textContent = dateOffset.seconds;
+  refs.hoursTimer.textContent = dateOffset.hours;
+  refs.minutesTimer.textContent = dateOffset.minutes;
+  refs.secondsTimer.textContent = dateOffset.seconds;
 }
 
 function addLeadingZero(value) {
