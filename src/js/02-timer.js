@@ -71,7 +71,7 @@ function getDeltaTime() {
     const dateOffset = convertMs(delta);
 
     if (delta <= 0) {
-      clearInterval(timerId);
+      clearInterval(startTimer);
     } else {
       clockView(dateOffset);
     }
