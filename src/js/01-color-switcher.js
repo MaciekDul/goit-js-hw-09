@@ -16,7 +16,7 @@ color.stopBtn.addEventListener('click', stopButton);
 function startButton() {
   color.body.style.backgroundColor = getRandomHexColor();
   timerId = setInterval(() => {
-    refs.body.style.backgroundColor = getRandomHexColor();
+    color.body.style.backgroundColor = getRandomHexColor();
   }, 1000);
 
   color.startBtn.disabled = true;

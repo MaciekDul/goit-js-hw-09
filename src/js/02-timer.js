@@ -30,7 +30,7 @@ const options = {
     } else {
       every.startButton.disabled = false;
       SELECTED_DATE = selectedDates[0];
-      console.log(refs.dateTime.value);
+      console.log(every.dateTime.value);
     }
   },
 };
@@ -60,8 +60,8 @@ function convertMs(ms) {
 }
 
 function startTimer() {
-  refs.startButton.disabled = true;
-  refs.dateTime.disabled = true;
+  every.startButton.disabled = true;
+  every.dateTime.disabled = true;
   getDeltaTime();
 }
 
@@ -79,10 +79,10 @@ function getDeltaTime() {
 }
 
 function clockView(dateOffset) {
-  refs.daysValue.textContent = dateOffset.days;
-  refs.hoursTimer.textContent = dateOffset.hours;
-  refs.minutesTimer.textContent = dateOffset.minutes;
-  refs.secondsTimer.textContent = dateOffset.seconds;
+  every.daysValue.textContent = dateOffset.days;
+  every.hoursTimer.textContent = dateOffset.hours;
+  every.minutesTimer.textContent = dateOffset.minutes;
+  every.secondsTimer.textContent = dateOffset.seconds;
 }
 
 function addLeadingZero(value) {

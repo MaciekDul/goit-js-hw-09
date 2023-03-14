@@ -27,9 +27,9 @@ function createPromise(position, delay) {
 function submitForm(event) {
   event.preventDefault();
 
-  let waitDelay = Number(refs.inputDelay.value);
-  let amount = Number(refs.inputAmount.value);
-  let waitStep = Number(refs.inputDelayStep.value);
+  let waitDelay = Number(opt.inputDelay.value);
+  let amount = Number(opt.inputAmount.value);
+  let waitStep = Number(opt.inputDelayStep.value);
 
   for (let i = 1; i <= amount; i += 1) {
     createPromise(i, waitDelay)
